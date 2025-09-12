@@ -24,7 +24,7 @@ PORT = int(os.getenv("PORT", 5000))
 
 TG_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
-logger = setup_logger(f"{"isik-wo-log"}", log_dir=f'{CWD}/utils/logs')
+logger = setup_logger(f"{"isik-wo-log"}", log_dir=f'{CWD}/api/utils/logs')
 
 # Initialize FastAPI app
 app = FastAPI(

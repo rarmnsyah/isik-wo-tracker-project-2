@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Depends, HTTPException
-from . import typing as _t  # (abaikan jika tidak dipakai)
 from supabase import Client
 from ..deps import get_supabase, get_current_user_id
 from ..models import WorkoutCreate, WorkoutOut

@@ -13,7 +13,7 @@ from typing import Any, Dict, Optional
 
 load_dotenv()
 
-router = APIRouter(prefix="/webhook", tags=['webhooks'])
+router = APIRouter(prefix="/api/py/webhook", tags=['webhooks'])
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
@@ -43,7 +43,7 @@ class WebhookBody(BaseModel):
 async def tg_send_message(chat_id: int, text: str) -> None:
     async with httpx.AsyncClient(timeout=10) as client:
         await client.post(f"{TG_API}/sendMessage", json={"chat_id": chat_id, "text": text})
-
+        
 @router.post("")
 async def telegram_webhook(request: Request):
     # 1) Verify Telegram’s secret token (you’ll pass this when setting the webhook)

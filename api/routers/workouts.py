@@ -3,7 +3,7 @@ from supabase import Client
 from ..deps import get_supabase, get_current_user_id
 from ..models import WorkoutCreate, WorkoutOut
 
-router = APIRouter(prefix="/workouts", tags=["workouts"])
+router = APIRouter(prefix="/api/py/workouts", tags=["workouts"])
 
 @router.post("", response_model=WorkoutOut)
 def create_workout(

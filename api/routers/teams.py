@@ -4,7 +4,7 @@ from supabase import Client
 from ..deps import get_supabase, get_current_user_id
 from ..models import TeamCreate, TeamOut
 
-router = APIRouter(prefix="/teams", tags=["teams"])
+router = APIRouter(prefix="/api/py/teams", tags=["teams"])
 
 def _gen_code(n=8):
     return ''.join(secrets.choice(string.ascii_uppercase + string.digits) for _ in range(n))

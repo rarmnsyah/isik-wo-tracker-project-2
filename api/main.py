@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter
-from .routers import workouts, teams
+from .routers import workouts, teams, webhook
 
 app = FastAPI(title="isik-wo-project API")
 router = APIRouter(prefix='/api/py')
@@ -14,5 +14,6 @@ def health():
     return {"ok": True}
 
 app.include_router(router)
+app.include_router(webhook.router)
 app.include_router(workouts.router)
 app.include_router(teams.router)
